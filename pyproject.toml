@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scLUMEN"
+version = "0.1.0"
+description = "scLUMEN: latent unbalanced flow matching for continuous single-cell dynamics"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = "==3.10.*"
+dependencies = [
+    "geomloss==0.3.1",
+    "matplotlib==3.8.2",
+    "numpy==1.26.4",
+    "pandas==2.1.4",
+    "POT==0.9.6.post1",
+    "scipy>=1.10",
+    "scikit-learn==1.7.2",
+    "torch==2.7.1",
+    "torchdiffeq==0.2.5",
+    "tqdm==4.67.3",
+]
+
+[project.optional-dependencies]
+notebook = ["jupyter"]
+
+[project.scripts]
+sclumen = "scLUMEN.runner:main"
+
+[tool.setuptools.packages.find]
+include = ["scLUMEN*"]
